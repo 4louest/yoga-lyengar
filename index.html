@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page avec boutons</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            gap: 20px;
+            background-color: #f5f5f5;
+        }
+
+        a.button {
+            text-decoration: none;
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+        }
+
+        a.button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<a class="button" href="/v1.html" target="_blank">
+    v1 - version zen
+</a>
+
+<a class="button" href="/v2.html" target="_blank">
+    v2 - version organique
+</a>
+
+</body>
+</html>

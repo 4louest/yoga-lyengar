@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yoga Iyengar Valence · Clara & Delphine</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage:     #5C7A5C;
+    --sage-lt:  #7FA67F;
+    --sage-pal: #D4E4D4;
+    --mint:     #E8F2E8;
+    --moss:     #3A5C3A;
+    --wheat:    #F5EED8;
+    --sand:     #E8DCC8;
+    --coral:    #D4735A;
+    --ink:      #1E2D1E;
+    --white:    #FAFDF7;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--ink);
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 3.5rem;
+    background: rgba(250,253,247,.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(92,122,92,.12);
+  }
+  .logo {
+    display: flex; align-items: center; gap: .6rem;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem; color: var(--moss);
+  }
+  .logo-leaf {
+    width: 28px; height: 28px; background: var(--sage);
+    border-radius: 50% 0 50% 0;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: .7rem;
+  }
+  nav ul { list-style: none; display: flex; gap: 2.5rem; }
+  nav ul a {
+    font-size: .78rem; letter-spacing: .08em; font-weight: 400;
+    color: var(--sage); text-decoration: none; transition: color .25s;
+  }
+  nav ul a:hover { color: var(--moss); }
+  .nav-btn {
+    padding: .6rem 1.4rem; background: var(--sage);
+    color: #fff; font-size: .75rem; letter-spacing: .06em;
+    text-decoration: none; border-radius: 100px;
+    transition: background .25s;
+  }
+  .nav-btn:hover { background: var(--moss); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    padding: 80px 0 0;
+    display: grid; grid-template-columns: 55% 45%;
+    position: relative; overflow: hidden;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 5rem 5rem 5rem 5rem;
+    background: var(--mint);
+    position: relative;
+  }
+  .hero-left::after {
+    content: '';
+    position: absolute; top: 0; right: -80px; bottom: 0; width: 160px;
+    background: var(--mint);
+    clip-path: ellipse(80px 100% at 0 50%);
+  }
+  .hero-chip {
+    display: inline-flex; align-items: center; gap: .5rem;
+    padding: .4rem .9rem; background: rgba(92,122,92,.12);
+    border-radius: 100px; color: var(--sage);
+    font-size: .72rem; font-weight: 500; margin-bottom: 2rem;
+    width: fit-content;
+  }
+  .hero-chip::before { content: '●'; font-size: .5rem; color: var(--sage-lt); }
+  h1.hero-h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    line-height: 1.05; color: var(--moss);
+    margin-bottom: 1.5rem;
+  }
+  h1.hero-h1 em { font-style: italic; color: var(--sage); }
+  .hero-desc {
+    font-size: .95rem; line-height: 1.8; color: rgba(30,45,30,.65);
+    max-width: 42ch; margin-bottom: 2.5rem;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-sage {
+    padding: .85rem 2rem; background: var(--sage); color: #fff;
+    font-size: .8rem; font-weight: 500; letter-spacing: .04em;
+    text-decoration: none; border-radius: 100px;
+    transition: background .25s, transform .25s;
+    border: none; cursor: pointer;
+  }
+  .btn-sage:hover { background: var(--moss); transform: translateY(-2px); }
+  .btn-ghost {
+    padding: .85rem 2rem;
+    border: 1.5px solid var(--sage); color: var(--sage);
+    font-size: .8rem; font-weight: 500; letter-spacing: .04em;
+    text-decoration: none; border-radius: 100px;
+    transition: all .25s;
+  }
+  .btn-ghost:hover { background: var(--sage); color: #fff; }
+
+  .hero-right {
+    background: var(--wheat);
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    padding: 5rem 3rem;
+    position: relative; overflow: hidden;
+  }
+  .hero-right::before {
+    content: '';
+    position: absolute; top: -100px; right: -100px;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(92,122,92,.12) 0%, transparent 70%);
+  }
+  .schedule-card {
+    width: 100%; max-width: 340px;
+    background: #fff; border-radius: 16px;
+    padding: 2rem; box-shadow: 0 8px 40px rgba(58,92,58,.1);
+    position: relative; z-index: 1;
+  }
+  .schedule-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem; color: var(--moss);
+    margin-bottom: 1.4rem;
+  }
+  .schedule-row {
+    display: flex; align-items: center; gap: 1rem;
+    padding: .7rem 0; border-bottom: 1px solid rgba(92,122,92,.08);
+  }
+  .schedule-row:last-child { border-bottom: none; }
+  .sched-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .dot-sage { background: var(--sage); }
+  .dot-moss { background: var(--moss); }
+  .dot-coral { background: var(--coral); }
+  .sched-info { flex: 1; }
+  .sched-info .day { font-size: .68rem; font-weight: 500; text-transform: uppercase; letter-spacing: .1em; color: var(--sage); }
+  .sched-info .time { font-size: .82rem; color: var(--ink); }
+  .sched-teacher {
+    font-size: .72rem; color: rgba(30,45,30,.5);
+    font-weight: 500;
+  }
+  .profs-pills {
+    display: flex; gap: .6rem; margin-top: 1.8rem; width: 100%; max-width: 340px;
+    position: relative; z-index: 1;
+  }
+  .prof-pill {
+    flex: 1; padding: .8rem;
+    background: rgba(92,122,92,.1); border-radius: 12px;
+    text-align: center;
+  }
+  .prof-pill .pname {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem; color: var(--moss);
+  }
+  .prof-pill .prole { font-size: .65rem; color: var(--sage); }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 7rem 5rem; }
+  .s-chip {
+    display: inline-flex; align-items: center; gap: .4rem;
+    padding: .3rem .8rem; background: rgba(92,122,92,.1);
+    border-radius: 100px; color: var(--sage);
+    font-size: .68rem; font-weight: 500; margin-bottom: 1rem;
+  }
+  .s-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3.2rem); color: var(--moss);
+    line-height: 1.15; margin-bottom: 1.2rem;
+  }
+  .s-title em { font-style: italic; color: var(--sage); }
+  .s-hr { width: 50px; height: 3px; background: var(--sage); border-radius: 10px; margin-bottom: 3rem; }
+
+  /* ─── MÉTHODE ─── */
+  #methode {
+    background: var(--wheat);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+  }
+  #methode p { font-size: .9rem; line-height: 1.85; color: rgba(30,45,30,.65); margin-bottom: 1.2rem; }
+  .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .benefit-tile {
+    background: #fff; border-radius: 12px; padding: 1.5rem;
+    box-shadow: 0 2px 16px rgba(58,92,58,.07);
+    transition: transform .25s, box-shadow .25s;
+  }
+  .benefit-tile:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(58,92,58,.12); }
+  .benefit-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: var(--sage-pal); margin-bottom: .8rem;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+  }
+  .benefit-tile h4 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem; color: var(--moss); margin-bottom: .4rem;
+  }
+  .benefit-tile p { font-size: .75rem; color: rgba(30,45,30,.6); line-height: 1.55; margin: 0; }
+
+  /* ─── COURS ─── */
+  #cours { background: var(--white); }
+  .cours-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .cours-panel {
+    background: var(--mint); border-radius: 16px; padding: 2.2rem;
+    border-top: 4px solid var(--sage);
+    transition: transform .25s;
+  }
+  .cours-panel:hover { transform: translateY(-4px); }
+  .cours-panel.adapte { border-top-color: var(--coral); }
+  .cours-panel.niveau2 { border-top-color: var(--moss); }
+  .cours-tag {
+    display: inline-block; padding: .25rem .7rem;
+    border-radius: 100px; font-size: .65rem; font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .tag-deb { background: rgba(92,122,92,.15); color: var(--sage); }
+  .tag-niv2 { background: rgba(58,92,58,.15); color: var(--moss); }
+  .tag-adapt { background: rgba(212,115,90,.15); color: var(--coral); }
+  .cours-panel h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem; color: var(--moss); margin-bottom: 1rem;
+  }
+  .slot-rows { list-style: none; }
+  .slot-rows li {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: .6rem 0; border-bottom: 1px solid rgba(92,122,92,.1);
+    font-size: .8rem; color: rgba(30,45,30,.7);
+  }
+  .slot-rows li:last-child { border-bottom: none; }
+  .slot-rows .sday { font-weight: 500; color: var(--sage); }
+  .slot-rows .sprof { font-size: .7rem; color: rgba(30,45,30,.45); }
+  .cours-note {
+    margin-top: 1rem; font-size: .78rem;
+    line-height: 1.6; color: rgba(30,45,30,.55);
+    padding-top: 1rem; border-top: 1px dashed rgba(92,122,92,.2);
+  }
+  .tarifs-organic {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+    margin-top: 3rem;
+  }
+  .tarif-organic {
+    background: var(--sage-pal); border-radius: 12px; padding: 1.5rem;
+    text-align: center;
+  }
+  .tarif-organic .t-price {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem; color: var(--moss); line-height: 1;
+    margin-bottom: .4rem;
+  }
+  .tarif-organic .t-label { font-size: .72rem; color: var(--sage); line-height: 1.4; }
+
+  /* ─── ENSEIGNANTES ─── */
+  #enseignantes {
+    background: var(--moss);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+  }
+  #enseignantes .s-chip { background: rgba(255,255,255,.1); color: var(--sage-pal); }
+  #enseignantes .s-title { color: #fff; }
+  #enseignantes .s-title em { color: var(--sage-pal); }
+  #enseignantes .s-hr { background: var(--sage-lt); }
+  #enseignantes p { font-size: .9rem; line-height: 1.8; color: rgba(255,255,255,.65); }
+  .prof-organic {
+    background: rgba(255,255,255,.07); border-radius: 16px;
+    padding: 2rem; margin-bottom: 1.2rem;
+    border: 1px solid rgba(255,255,255,.1);
+    transition: background .25s;
+  }
+  .prof-organic:hover { background: rgba(255,255,255,.1); }
+  .prof-organic-header {
+    display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;
+  }
+  .prof-blob {
+    width: 56px; height: 56px;
+    background: linear-gradient(135deg, var(--sage), var(--sage-lt));
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem; color: #fff; flex-shrink: 0;
+    animation: morphBlob 6s ease-in-out infinite;
+  }
+  .prof-blob.b2 { animation-delay: -3s; }
+  @keyframes morphBlob {
+    0%,100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    25%      { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; }
+    50%      { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
+    75%      { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; }
+  }
+  .prof-organic h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem; color: #fff;
+  }
+  .prof-organic .role { font-size: .68rem; color: var(--sage-lt); font-weight: 500; }
+  .prof-organic p { font-size: .8rem; margin: 0; }
+  .prof-organic .contact {
+    margin-top: .8rem; font-size: .75rem; color: var(--sage-lt);
+    display: flex; gap: .8rem; flex-wrap: wrap;
+  }
+
+  /* ─── INFOS PRATIQUES ─── */
+  #infos {
+    background: var(--sand);
+  }
+  .infos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .info-card {
+    background: #fff; border-radius: 12px; padding: 1.5rem;
+    display: flex; gap: 1rem; align-items: flex-start;
+  }
+  .info-emoji { font-size: 1.4rem; margin-top: .1rem; }
+  .info-card h4 { font-family: 'DM Serif Display', serif; font-size: .95rem; color: var(--moss); margin-bottom: .3rem; }
+  .info-card p { font-size: .78rem; color: rgba(30,45,30,.6); line-height: 1.55; }
+
+  /* ─── CONTACT ─── */
+  #contact {
+    background: var(--sage);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+  }
+  #contact .s-chip { background: rgba(255,255,255,.15); color: #fff; }
+  #contact .s-title { color: #fff; }
+  #contact .s-title em { font-style: italic; color: var(--wheat); }
+  #contact .s-hr { background: rgba(255,255,255,.4); }
+  #contact p { font-size: .9rem; line-height: 1.8; color: rgba(255,255,255,.8); margin-bottom: 2rem; }
+  .contact-pills { display: flex; flex-direction: column; gap: .8rem; margin-bottom: 2rem; }
+  .contact-pill {
+    display: flex; align-items: center; gap: .8rem;
+    background: rgba(255,255,255,.12); border-radius: 10px; padding: .8rem 1.2rem;
+    font-size: .82rem; color: rgba(255,255,255,.9);
+  }
+  .contact-pill .ci { font-size: 1rem; }
+  .essai-organic {
+    background: var(--wheat); border-radius: 20px;
+    padding: 3rem; text-align: center;
+  }
+  .essai-price {
+    font-family: 'DM Serif Display', serif;
+    font-size: 5rem; font-style: italic; color: var(--moss); line-height: 1;
+  }
+  .essai-sublabel { font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--sage); margin-bottom: 1.5rem; }
+  .essai-organic p { font-size: .85rem; color: rgba(30,45,30,.65); line-height: 1.7; margin-bottom: 2rem; }
+  .btn-coral {
+    padding: .9rem 2rem; background: var(--coral); color: #fff;
+    font-size: .8rem; font-weight: 500; letter-spacing: .04em;
+    border-radius: 100px; text-decoration: none;
+    transition: background .25s; border: none; cursor: pointer;
+    display: inline-block;
+  }
+  .btn-coral:hover { background: #b85c45; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    padding: 2rem 5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--moss); color: rgba(212,228,212,.5);
+    font-size: .72rem; letter-spacing: .06em;
+  }
+  .footer-logo {
+    font-family: 'DM Serif Display', serif;
+    color: var(--sage-pal); font-style: italic; font-size: .9rem;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+  [data-reveal].visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── PHOTO BAND ─── */
+  .photo-band {
+    position: relative; overflow: hidden;
+    height: 480px;
+    clip-path: polygon(0 6%, 100% 0, 100% 94%, 0 100%);
+    margin: -40px 0;
+    z-index: 1;
+  }
+  .photo-band img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center 40%;
+    display: block;
+    filter: brightness(.72) saturate(.9);
+    transform: scale(1.04);
+    transition: transform 10s ease;
+  }
+  .photo-band:hover img { transform: scale(1.08); }
+  .photo-band-overlay {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, rgba(58,92,58,.45) 0%, rgba(30,45,30,.3) 100%);
+  }
+  .photo-band-overlay blockquote {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.3rem, 2.5vw, 2rem);
+    font-style: italic; color: #fff;
+    text-align: center; max-width: 700px;
+    line-height: 1.45; padding: 0 3rem;
+    text-shadow: 0 2px 20px rgba(0,0,0,.3);
+  }
+  .photo-band-overlay cite {
+    display: block; margin-top: 1rem;
+    font-size: .75rem; font-style: normal;
+    letter-spacing: .15em; text-transform: uppercase;
+    color: rgba(212,228,212,.75);
+  }
+  .photo-band-credit {
+    position: absolute; bottom: 1.2rem; right: 1.5rem;
+    font-size: .58rem; color: rgba(255,255,255,.3);
+    letter-spacing: .06em;
+  }
+
+  @media (max-width: 900px) {
+    nav ul, .nav-btn { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    section { padding: 5rem 2rem; }
+    #methode, #enseignantes, #contact { grid-template-columns: 1fr; }
+    .cours-wrapper { grid-template-columns: 1fr; }
+    .tarifs-organic, .infos-grid { grid-template-columns: 1fr 1fr; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+    .photo-band { height: 300px; clip-path: polygon(0 3%, 100% 0, 100% 97%, 0 100%); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo"><div class="logo-leaf">☯</div>Yoga Iyengar Valence</div>
+  <ul>
+    <li><a href="#hero">Accueil</a></li>
+    <li><a href="#methode">Méthode</a></li>
+    <li><a href="#cours">Cours</a></li>
+    <li><a href="#enseignantes">Enseignantes</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-btn">Essai gratuit</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="hero">
+  <div class="hero-left">
+    <div class="hero-chip">Valence · Salle Parallèle · Mercredi &amp; Vendredi</div>
+    <h1 class="hero-h1">
+      Yoga<br>
+      <em>Iyengar®</em><br>
+      à Valence
+    </h1>
+    <p class="hero-desc">
+      Alignement, précision, bienveillance. Clara et Delphine vous invitent à découvrir une pratique rigoureuse et accessible — débutants et tous niveaux.
+    </p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-sage">Cours d'essai — 18 €</a>
+      <a href="#methode" class="btn-ghost">La méthode</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="schedule-card">
+      <h3>Planning de la semaine</h3>
+      <div class="schedule-row">
+        <div class="sched-dot dot-sage"></div>
+        <div class="sched-info"><div class="day">Mercredi</div><div class="time">9h15 – 10h30 · Niveau 1/2</div></div>
+        <div class="sched-teacher">Clara</div>
+      </div>
+      <div class="schedule-row">
+        <div class="sched-dot dot-coral"></div>
+        <div class="sched-info"><div class="day">Mercredi</div><div class="time">10h45 – 12h · Doux/Adapté</div></div>
+        <div class="sched-teacher">Clara</div>
+      </div>
+      <div class="schedule-row">
+        <div class="sched-dot dot-sage"></div>
+        <div class="sched-info"><div class="day">Mercredi</div><div class="time">12h15 – 13h30 · Niveau 1/2</div></div>
+        <div class="sched-teacher">Clara</div>
+      </div>
+      <div class="schedule-row">
+        <div class="sched-dot dot-sage"></div>
+        <div class="sched-info"><div class="day">Mercredi</div><div class="time">17h45 – 19h15 · Niveau 1/2</div></div>
+        <div class="sched-teacher">Delphine</div>
+      </div>
+      <div class="schedule-row">
+        <div class="sched-dot dot-moss"></div>
+        <div class="sched-info"><div class="day">Mercredi</div><div class="time">19h15 – 20h45 · Niveau 2/3</div></div>
+        <div class="sched-teacher">Delphine</div>
+      </div>
+      <div class="schedule-row">
+        <div class="sched-dot dot-moss"></div>
+        <div class="sched-info"><div class="day">Vendredi</div><div class="time">9h – 10h30 · Niveau 2/3</div></div>
+        <div class="sched-teacher">Clara</div>
+      </div>
+    </div>
+    <div class="profs-pills">
+      <div class="prof-pill">
+        <div class="pname">Clara</div>
+        <div class="prole">En formation</div>
+      </div>
+      <div class="prof-pill">
+        <div class="pname">Delphine</div>
+        <div class="prole">Certifiée AFYI</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHOTO BAND -->
+<div class="photo-band" aria-hidden="true">
+  <img
+    src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1600&q=85&auto=format&fit=crop&crop=focalpoint&fp-y=0.45"
+    alt="Pratique du yoga Iyengar – alignement et posture"
+    loading="lazy"
+  >
+  <div class="photo-band-overlay">
+    <blockquote>
+      « Le yoga est une lumière — une fois allumée, elle ne s'éteint jamais. »
+      <cite>— B.K.S. Iyengar</cite>
+    </blockquote>
+  </div>
+  <span class="photo-band-credit">Photo · Unsplash / Licence libre</span>
+</div>
+
+<!-- MÉTHODE -->
+<section id="methode" data-reveal>
+  <div>
+    <div class="s-chip">La méthode</div>
+    <h2 class="s-title">Qu'est-ce que le yoga<br><em>Iyengar®</em> ?</h2>
+    <div class="s-hr"></div>
+    <p>Fondée par B.K.S. Iyengar, cette méthode est reconnue mondialement pour son approche rigoureuse et progressive. L'accent est mis sur l'alignement anatomique précis des postures, soutenu par l'usage de supports pédagogiques innovants.</p>
+    <p>Accessible à tous — enfants, seniors, personnes fragilisées ou en grossesse — le yoga Iyengar évolue avec vous, à votre rythme, sans esprit de compétition.</p>
+    <p>En France, l'AFYI rassemble 500 enseignants certifiés, garants d'un enseignement de qualité unifié.</p>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit-tile">
+      <div class="benefit-icon">⟁</div>
+      <h4>Alignement</h4>
+      <p>Attention précise à chaque partie du corps pour une pratique sûre et efficace.</p>
+    </div>
+    <div class="benefit-tile">
+      <div class="benefit-icon">◈</div>
+      <h4>Supports</h4>
+      <p>Briques, sangles, chaises — pour adapter la pratique à chaque corps.</p>
+    </div>
+    <div class="benefit-tile">
+      <div class="benefit-icon">◎</div>
+      <h4>Progressivité</h4>
+      <p>Apprentissage structuré par niveaux, au rythme de chaque élève.</p>
+    </div>
+    <div class="benefit-tile">
+      <div class="benefit-icon">♡</div>
+      <h4>Bienveillance</h4>
+      <p>Petits groupes, attention individuelle, ambiance chaleureuse.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COURS -->
+<section id="cours" data-reveal>
+  <div class="s-chip">Planning &amp; Tarifs</div>
+  <h2 class="s-title">Nos <em>cours</em></h2>
+  <div class="s-hr"></div>
+  <div class="cours-wrapper">
+    <div class="cours-panel">
+      <span class="cours-tag tag-deb">Niveau 1 / 2</span>
+      <h3>Cours débutant</h3>
+      <ul class="slot-rows">
+        <li><span class="sday">Mer.</span><span>9h15 – 10h30</span><span class="sprof">Clara</span></li>
+        <li><span class="sday">Mer.</span><span>12h15 – 13h30</span><span class="sprof">Clara</span></li>
+        <li><span class="sday">Mer.</span><span>17h45 – 19h15</span><span class="sprof">Delphine</span></li>
+      </ul>
+      <div class="cours-note">Pour ceux qui découvrent la méthode Iyengar® ou souhaitent reprendre des bases solides.</div>
+    </div>
+    <div class="cours-panel niveau2">
+      <span class="cours-tag tag-niv2">Niveau 2 / 3</span>
+      <h3>Cours intermédiaire</h3>
+      <ul class="slot-rows">
+        <li><span class="sday">Mer.</span><span>19h15 – 20h45</span><span class="sprof">Delphine</span></li>
+        <li><span class="sday">Ven.</span><span>9h00 – 10h30</span><span class="sprof">Clara</span></li>
+      </ul>
+      <div class="cours-note">Pour consolider la pratique avant d'aborder les postures inversées.</div>
+    </div>
+    <div class="cours-panel adapte" style="grid-column: 1 / -1">
+      <span class="cours-tag tag-adapt">Doux / Adapté</span>
+      <h3>Cours adapté</h3>
+      <ul class="slot-rows">
+        <li><span class="sday">Mer.</span><span>10h45 – 12h00</span><span class="sprof">Clara</span></li>
+      </ul>
+      <div class="cours-note">Seniors, personnes fragilisées, reprise d'activité, affection longue durée, grande fatigue. Un cours bienveillant, à votre rythme.</div>
+    </div>
+  </div>
+  <div class="tarifs-organic">
+    <div class="tarif-organic"><div class="t-price">380€</div><div class="t-label">Forfait annuel<br>cours 1h30</div></div>
+    <div class="tarif-organic"><div class="t-price">360€</div><div class="t-label">Forfait annuel<br>cours 1h15</div></div>
+    <div class="tarif-organic"><div class="t-price">150€</div><div class="t-label">Forfait trimestriel<br>3 mois</div></div>
+    <div class="tarif-organic"><div class="t-price">18€</div><div class="t-label">Séance d'essai<br>prévoir l'appoint</div></div>
+  </div>
+</section>
+
+<!-- ENSEIGNANTES -->
+<section id="enseignantes" data-reveal>
+  <div>
+    <div class="s-chip">L'équipe</div>
+    <h2 class="s-title">Clara &amp; <em>Delphine</em></h2>
+    <div class="s-hr"></div>
+    <p>Deux enseignantes passionnées, engagées dans la transmission rigoureuse et chaleureuse de la méthode Iyengar®. Elles vous accueillent dans un espace de confiance et de progression.</p>
+  </div>
+  <div>
+    <div class="prof-organic">
+      <div class="prof-organic-header">
+        <div class="prof-blob">D</div>
+        <div>
+          <h3>Delphine Oyarzabal Saury</h3>
+          <div class="role">Professeure certifiée Yoga Iyengar® · depuis 2017</div>
+        </div>
+      </div>
+      <p>Pratique depuis 2004, enseigne depuis 2017. Formation à Lyon et Marseille auprès de Stéphane Lalo. Éducatrice sportive, formée en Activité Physique Adaptée et Marche Nordique.</p>
+      <div class="contact">
+        <span>✉ delpil@orange.fr</span>
+        <span>📞 07 69 61 14 35</span>
+      </div>
+    </div>
+    <div class="prof-organic">
+      <div class="prof-organic-header">
+        <div class="prof-blob b2">C</div>
+        <div>
+          <h3>Clara Bâtie</h3>
+          <div class="role">En formation mentorat Iyengar® · enseigne depuis 2024</div>
+        </div>
+      </div>
+      <p>Certifiée Hatha & Vinyasa (200h YTT, One Yoga School Thailand, 2022). Pratique Iyengar depuis 2021. En mentorat depuis 2023. Enseigne à Valence et Crest.</p>
+      <div class="contact">
+        <span>✉ clara.batie.ei@outlook.fr</span>
+        <span>📞 06 77 89 17 37</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFOS PRATIQUES -->
+<section id="infos" data-reveal>
+  <div class="s-chip">Infos pratiques</div>
+  <h2 class="s-title">Avant votre <em>premier cours</em></h2>
+  <div class="s-hr"></div>
+  <div class="infos-grid">
+    <div class="info-card"><div class="info-emoji">⏰</div><div><h4>Arrivée</h4><p>Prévoir 10–15 min d'avance pour se changer et se centrer. Les cours commencent et se terminent à l'heure.</p></div></div>
+    <div class="info-card"><div class="info-emoji">🥗</div><div><h4>Alimentation</h4><p>Éviter de manger 2–3h avant la pratique. Sauf exception, il est déconseillé de boire pendant le cours.</p></div></div>
+    <div class="info-card"><div class="info-emoji">💬</div><div><h4>Santé</h4><p>Informez votre enseignante de tout état de santé : grossesse, hernie, hypertension, règles, douleurs...</p></div></div>
+    <div class="info-card"><div class="info-emoji">👕</div><div><h4>Tenue</h4><p>Short ou leggings + t-shirt confortable. Pratique pieds nus.</p></div></div>
+    <div class="info-card"><div class="info-emoji">🦴</div><div><h4>Ostéopathie</h4><p>Évitez de pratiquer le jour suivant une manipulation vertébrale. Un cours avant booste les effets !</p></div></div>
+    <div class="info-card"><div class="info-emoji">📍</div><div><h4>Lieu</h4><p>Salle Parallèle — 82 rue Génissieux, 26000 Valence.</p></div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" data-reveal>
+  <div>
+    <div class="s-chip">Nous rejoindre</div>
+    <h2 class="s-title">Prêt·e à<br><em>commencer ?</em></h2>
+    <div class="s-hr"></div>
+    <p>Contactez l'une de nos enseignantes pour réserver votre séance d'essai ou poser vos questions.</p>
+    <div class="contact-pills">
+      <div class="contact-pill"><span class="ci">📍</span><span>82 rue Génissieux, 26000 Valence</span></div>
+      <div class="contact-pill"><span class="ci">✉</span><span>delpil@orange.fr · clara.batie.ei@outlook.fr</span></div>
+      <div class="contact-pill"><span class="ci">📞</span><span>07 69 61 14 35 · 06 77 89 17 37</span></div>
+    </div>
+  </div>
+  <div class="essai-organic">
+    <div class="essai-price">18€</div>
+    <div class="essai-sublabel">Séance d'essai · prévoir l'appoint</div>
+    <p>Venez découvrir la méthode Iyengar® lors d'un premier cours sans engagement. Tenue confortable, pratique pieds nus.</p>
+    <a href="mailto:delpil@orange.fr" class="btn-coral">Réserver une séance</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 Yoga Iyengar Valence · Salle Parallèle</span>
+  <div class="footer-logo">Clara & Delphine</div>
+  <span>Méthode Iyengar® · AFYI</span>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('[data-reveal]').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
