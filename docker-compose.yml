@@ -1,0 +1,8 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      # Édition à chaud : tout changement dans le dossier est servi immédiatement.
+      - ./:/var/www/html

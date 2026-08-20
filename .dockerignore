@@ -1,0 +1,8 @@
+.git
+.gitignore
+config.php
+data/*.bak
+*.md
+v2.html
+v3.html
+choix.html

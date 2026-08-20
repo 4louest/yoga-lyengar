@@ -1,0 +1,9 @@
+# Mot de passe admin généré au 1er lancement — ne jamais committer
+config.php
+
+# Sauvegarde automatique du planning
+data/*.bak
+
+# Outils dev locaux
+.idea/
+.claude/

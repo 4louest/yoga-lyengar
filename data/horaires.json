@@ -1,0 +1,38 @@
+{
+    "cours": [
+        {
+            "niveau": "1",
+            "tag": "Niveau 1 / 2",
+            "titre": "Débutant",
+            "description": "Pour ceux qui n'ont jamais pratiqué ou souhaitent consolider leurs bases.",
+            "creneaux": [
+                { "jour": "Mer.", "horaire": "9h15 – 10h30", "enseignante": "Clara" },
+                { "jour": "Mer.", "horaire": "12h15 – 13h30", "enseignante": "Clara" },
+                { "jour": "Mer.", "horaire": "17h45 – 19h15", "enseignante": "Delphine" }
+            ]
+        },
+        {
+            "niveau": "2",
+            "tag": "Niveau 2 / 3",
+            "titre": "Intermédiaire",
+            "description": "Pour consolider la pratique avant l'introduction des postures inversées.",
+            "creneaux": [
+                { "jour": "Mer.", "horaire": "19h15 – 20h45", "enseignante": "Delphine" }
+            ]
+        },
+        {
+            "niveau": "D",
+            "tag": "Doux / Adapté",
+            "titre": "Cours adapté",
+            "description": "Seniors, personnes fragilisées, reprise d'activité, affections longue durée.",
+            "creneaux": [
+                { "jour": "Mer.", "horaire": "10h45 – 12h00", "enseignante": "Clara" }
+            ]
+        }
+    ],
+    "tarifs": [
+        { "montant": "380 €", "libelle": "Forfait annuel · cours 1h30" },
+        { "montant": "360 €", "libelle": "Forfait annuel · cours 1h15" },
+        { "montant": "150 €", "libelle": "Forfait trimestriel" }
+    ]
+}
