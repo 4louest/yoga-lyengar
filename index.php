@@ -73,11 +73,11 @@ $jsonLd = [
   <div class="hero-visual">
     <img
       class="hero-photo"
-      src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=85&auto=format&fit=crop&crop=focalpoint&fp-y=0.35"
-      alt="Pratique du yoga Iyengar – posture d'alignement"
+      src="assets/bks_iyengar.jpg"
+      alt="B.K.S. Iyengar en Utthita Trikonasana (posture du triangle)"
       loading="eager"
     >
-    <span class="photo-credit">Photo · Unsplash / Licence libre</span>
+    <span class="photo-credit">B.K.S. Iyengar · Utthita Trikonasana</span>
     <div class="hero-quote">
       <p>« Le yoga est une lumière — une fois allumée, elle ne s'éteint jamais. »
         <cite>— B.K.S. Iyengar</cite></p>

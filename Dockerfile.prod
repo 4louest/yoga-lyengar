@@ -1,0 +1,16 @@
+# Image de production : PHP + Apache (mod_php), pour déploiement Docker sur VPS.
+# (Le Dockerfile à la racine reste dédié au dev local — voir CLAUDE.md.)
+FROM php:8.3-apache
+
+WORKDIR /var/www/html
+
+# Copie du code dans l'image (utile si l'image tourne sans bind mount).
+COPY . /var/www/html
+
+# data/ et la racine doivent être inscriptibles par www-data :
+# - data/horaires.json (+ .bak) est réécrit par admin.php
+# - config.php est créé au 1er lancement de admin.php
+RUN chown -R www-data:www-data /var/www/html \
+ && chmod -R u+rwX /var/www/html
+
+EXPOSE 80
