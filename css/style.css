@@ -286,6 +286,8 @@ section { padding: 7rem 6rem; }
 }
 .prof-card p { font-size: .8rem; line-height: 1.7; color: rgba(245,239,230,.82); }
 .prof-card .contact { margin-top: .8rem; font-size: .75rem; color: var(--clay-lt); }
+.prof-card .contact a { color: inherit; text-decoration: none; }
+.prof-card .contact a:hover { text-decoration: underline; }
 
 /* ── CONTACT ── */
 #contact {
@@ -304,6 +306,8 @@ section { padding: 7rem 6rem; }
 .info-item .icon { font-size: 1.1rem; margin-top: .1rem; }
 .info-item div { font-size: .85rem; line-height: 1.6; color: rgba(255,255,255,.95); }
 .info-item div strong { display: block; color: #fff; font-size: .68rem; letter-spacing: .15em; text-transform: uppercase; margin-bottom: .2rem; }
+.info-item a { color: inherit; text-decoration: none; }
+.info-item a:hover { text-decoration: underline; }
 .btn-white {
   display: inline-flex; align-items: center; gap: .8rem;
   padding: .9rem 2rem; background: #fff; color: var(--clay);

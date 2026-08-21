@@ -198,7 +198,7 @@
             l’enseignement du Yoga Iyengar® -.Educatrice sportive et certifiée en Activité
             Physiques Adaptées, Marche Active et Marche Nordique
           </p>
-          <div class="contact">✉ delpil@orange.fr · 07 69 61 14 35</div>
+          <div class="contact">✉ <a href="mailto:delpil@orange.fr">delpil@orange.fr</a> · <a href="tel:+33769611435">07 69 61 14 35</a></div>
         </div>
       </div>
       <div class="prof-card">
@@ -209,7 +209,7 @@
           <h3>Clara Bâtie</h3>
           <div class="role">Professeure en formation mentorat</div>
           <p>Certifiée Hatha &amp; Vinyasa (200h, One Yoga School Thailand, 2022). Pratique Iyengar depuis 2021, en formation/mentorat Iyengar depuis 2023. Enseigne à Valence et Crest depuis 2024.</p>
-          <div class="contact">✉ clara.batie.ei@outlook.fr · 06 77 89 17 37</div>
+          <div class="contact">✉ <a href="mailto:clara.batie.ei@outlook.fr">clara.batie.ei@outlook.fr</a> · <a href="tel:+33677891737">06 77 89 17 37</a></div>
         </div>
       </div>
     </div>
@@ -229,11 +229,11 @@
         </div>
         <div class="info-item">
           <span class="icon">📧</span>
-          <div><strong>Email</strong>delpil@orange.fr · clara.batie.ei@outlook.fr</div>
+          <div><strong>Email</strong><a href="mailto:delpil@orange.fr">delpil@orange.fr</a> · <a href="mailto:clara.batie.ei@outlook.fr">clara.batie.ei@outlook.fr</a></div>
         </div>
         <div class="info-item">
           <span class="icon">📞</span>
-          <div><strong>Téléphone</strong>Delphine : 07 69 61 14 35 · Clara : 06 77 89 17 37</div>
+          <div><strong>Téléphone</strong>Delphine : <a href="tel:+33769611435">07 69 61 14 35</a> · Clara : <a href="tel:+33677891737">06 77 89 17 37</a></div>
         </div>
       </div>
       <a href="mailto:delpil@orange.fr" class="btn-white">Contacter une enseignante <span>→</span></a>
