@@ -169,9 +169,14 @@ section { padding: 7rem 6rem; }
   background: var(--parch);
   display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
 }
-#methode .text p {
+#methode .text p, #methode li{
   font-size: .9rem; line-height: 1.9; color: var(--stone);
   margin-bottom: 1.2rem;
+}
+#methode li {
+  text-indent: -1.2rem; padding-left: 1.2rem;
+  margin-left: 2rem;
+  margin-bottom: .1rem;
 }
 .feature-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
@@ -319,6 +324,31 @@ section { padding: 7rem 6rem; }
 }
 .map-embed iframe:hover { filter: none; }
 
+/* ── AUTRES LIEUX ── */
+#autres-lieux {
+  padding: 3rem 6rem;
+  background: var(--parch);
+  border-top: 1px solid rgba(200,120,90,.15);
+}
+#autres-lieux .section-label { margin-bottom: .6rem; }
+.autres-lieux-title {
+  font-family: 'Jost', sans-serif; font-weight: 400;
+  font-size: .78rem; letter-spacing: .04em;
+  color: var(--stone); margin-bottom: 1.4rem;
+}
+.autres-lieux-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 3rem;
+}
+.lieu-item {
+  font-size: .78rem; line-height: 1.6; color: var(--stone);
+}
+.lieu-item strong { color: var(--ink); font-weight: 400; }
+.lieu-item .lieu-detail {
+  display: block; font-size: .72rem; color: var(--stone); opacity: .8;
+  margin-top: .2rem;
+}
+.lieu-item a { color: var(--clay); text-decoration: underline; text-underline-offset: 2px; }
+
 /* ── FOOTER ── */
 footer {
   padding: 2rem 6rem;
@@ -356,6 +386,8 @@ footer {
   .cours-grid { grid-template-columns: 1fr; }
   .feature-grid { grid-template-columns: 1fr; }
   .tarifs-row { flex-wrap: wrap; gap: 1rem; }
+  #autres-lieux { padding: 2.5rem 2rem; }
+  .autres-lieux-grid { grid-template-columns: 1fr; gap: 1.2rem; }
   /* Cartes enseignantes : photo au-dessus, texte centré en dessous */
   .prof-card {
     flex-direction: column; align-items: center; text-align: center;
